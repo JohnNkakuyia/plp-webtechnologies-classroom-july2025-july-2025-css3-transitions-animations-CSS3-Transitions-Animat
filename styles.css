@@ -1,0 +1,96 @@
+/* === Light Theme (default) === */
+body {
+  background: #f4f4f9;
+  color: #222;
+  font-family: Arial, sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* === Dark Theme === */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* === Part 1: CSS3 Transitions & Animations === */
+#hoverBtn {
+  background: teal;
+  color: white;
+  border: none;
+  transition: background 0.5s ease;
+}
+#hoverBtn:hover {
+  background: darkorange;
+}
+
+#animatedBox {
+  width: 100px;
+  height: 100px;
+  background: purple;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+.animate {
+  animation: bounce 1s ease forwards;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+/* === Modal Popup === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeOut 0.5s forwards;
+}
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s forwards;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  animation: slideDown 0.5s ease;
+}
+body.dark-mode .modal-content {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
